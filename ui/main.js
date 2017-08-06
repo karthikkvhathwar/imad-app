@@ -1,10 +1,10 @@
 console.log('Loaded!');
 
-var element = document.getElemntById("main-text");
+var element = document.getElementById("main-text");
 
 element.innerHTML = 'New Value';
 
-var img = element.getElelementById("madi");
+var img = element.getElementById("madi");
 var marginLeft = 0;
 function moveRight() {
     marginLeft = marginLeft + 1;
