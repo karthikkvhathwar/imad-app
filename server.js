@@ -5,6 +5,119 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var articles = {
+    "atricle-one": {
+        title:'This is Article One - Karthik',
+        date:'August 6th 2017',
+        content:`
+            <div>
+                <a href="/">home</a>
+            </div>
+            <hr/>
+            <h3>
+                Article One
+            </h3>
+            <div>
+                August 6th 2017
+            </div>
+            <div>
+                <p>
+                    I love to work on Web based Technologies
+                </p>
+                <p>
+                    I am a geek
+                </p>
+                <p>
+                    And a Passionate learner
+                </p> 
+            </div>
+            <hr/>
+            <h3>
+                Other Articles
+            </h3>
+            <div>
+                <a href="/article-two">article-two</a>
+            </div>
+            <div>
+                <a href="/article-three">article-three</a>
+            </div>`
+    },
+    "article-two": {
+        title:'This is Article Two - Karthik'
+        date:'August 7th 2017',
+        content:`
+            <div>
+                <a href="/">home</a>
+            </div>
+            <hr/>
+            <h3>
+                Article Two
+            </h3>
+            <div>
+                August 6th 2017
+            </div>
+            <div>
+                <p>
+                    I am basically from Kundapura
+                    
+                </p>
+                <p>
+                    A place known for beautiful beaches and tasty dishes
+                </p>
+                <p>
+                    And very unique art <a href="https://en.wikipedia.org/wiki/Yakshagana">Yakshagana</a>
+                </p> 
+            </div>
+            <hr/>
+            <h3>
+                Other Articles
+            </h3>
+            <div>
+                <a href="/article-one">article-one</a>
+            </div>
+            <div>
+                <a href="/article-three">article-three</a>
+            </div>`
+    },
+    "article-three": {
+        title:'This is Article Three - Karthik'
+        date:'August 8th 2017'
+        content:`
+            <div>
+                <a href="/">home</a>
+            </div>
+            <hr/>
+            <h3>
+                Article Three
+            </h3>
+            <div>
+                August 7th 2017
+            </div>
+            <div>
+                <p>
+                    I am an Engineer
+                    
+                </p>
+                <p>
+                    I am working in CISCO
+                </p>
+                <p>
+                   Have a nice day
+                </p> 
+            </div>
+            <hr/>
+            <h3>
+                Other Articles
+            </h3>
+            <div>
+                <a href="/article-one">article-one</a>
+            </div>
+            <div>
+                <a href="/article-two">article-two</a>
+            </div>
+            `
+    }
+}
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
