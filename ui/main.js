@@ -39,15 +39,26 @@ var nam = nameInput.value;
 var submitbtn = document.getElementById("submit_btn");
 
 submitbtn.onclick = function() {
-    
-    var names = ["name1","name2","name3","name4"];
-    var li = '';
-    
-    for(var i=0;i<names.length;i++) {
-        li += '<li>'+names[i]+'</li>';
-    }
-    
-    var ul = document.getElementById("ul");
-    ul.innerHTML = li;
+        //Create a request object
+    var request = new XMLHttpRequest();
+    //Capture the response and store the response in the variable
+    request.onreadystatechange = function() {
+        if(request.readyState === XMLHttpRequest.DONE) {
+            if(request.status === 200) {
+                var names = ["name1","name2","name3","name4"];
+                var li = '';
+                
+                for(var i=0;i<names.length;i++) {
+                    li += '<li>'+names[i]+'</li>';
+                }
+                
+                var ul = document.getElementById("ul");
+                ul.innerHTML = li;
+            }
+        }
+    };
+    //make a request
+    request.open('GET','http://karthikhathwar28.imad.hasura-app.io/submit-name?name='+nam,true);
+    request.send(null);
 }
 
