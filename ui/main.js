@@ -44,7 +44,7 @@ submitbtn.onclick = function() {
     var li = '';
     
     for(var i=0;i<names.length;i++) {
-        li = 'li'+names[i]+'/li';
+        li = '<li>'+names[i]+'</li>';
     }
     
     var ul = document.getElementById("ul");
