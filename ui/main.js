@@ -33,19 +33,19 @@ button.onclick = function() {
     request.send(null);
 };
 
-var nameInput = document.getElementById("name");
-var nam = nameInput.value;
-
+var nam = '';
 var submitbtn = document.getElementById("submit_btn");
-
 submitbtn.onclick = function() {
+    var nameInput = document.getElementById("name");
+    var nam = nameInput.value;
         //Create a request object
     var request = new XMLHttpRequest();
     //Capture the response and store the response in the variable
     request.onreadystatechange = function() {
         if(request.readyState === XMLHttpRequest.DONE) {
             if(request.status === 200) {
-                var names = ["name1","name2","name3","name4"];
+                var names = request.responseText;
+                names = JSON.parse(names);
                 var li = '';
                 
                 for(var i=0;i<names.length;i++) {
