@@ -48,6 +48,6 @@ submitbtn.onclick = function() {
     }
     
     var ul = document.getElementById("ul");
-    ul.innerHTML = list;
+    ul.innerHTML = li;
 }
 
